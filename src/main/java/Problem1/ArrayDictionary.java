@@ -46,6 +46,13 @@ public class ArrayDictionary implements Dictionary {
     @Override
     public void remove(String key) {
         // homework
+        int hashedKey = hashFunction(key);
+
+        if (entries[hashedKey] == null) {
+            return;
+        }
+
+        entries[hashedKey] = entries[hashedKey].next; //The second entry in the dictionary becomes the first
     }
 
     @Override
